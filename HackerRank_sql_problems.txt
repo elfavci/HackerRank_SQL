@@ -162,3 +162,19 @@ WHERE COUNTRYCODE='JPN'
 
 SELECT MAX(POPULATION) - MIN(POPULATION) AS DifPopulation
 FROM CITY
+
+27-	Given the CITY and COUNTRY tables, query the sum of the populations of all cities where the CONTINENT is 'Asia'. Note: CITY.CountryCode and COUNTRY.Code are matching key columns.
+
+SELECT SUM(CITY.POPULATION)
+FROM CITY
+INNER JOIN COUNTRY ON CITY.CountryCode = COUNTRY.Code
+WHERE CONTINENT ='Asia';
+
+28-	 Given the CITY and COUNTRY tables, query the names of all cities where the CONTINENT is 'Africa'. Note: CITY.CountryCode and COUNTRY.Code are matching key columns.
+
+SELECT
+    c.name
+FROM CITY AS c
+INNER JOIN COUNTRY AS o ON c.CountryCode = o.Code
+WHERE CONTINENT ='Africa';
+
